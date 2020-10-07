@@ -454,9 +454,9 @@ class JournalMaker(object):
         """Write the constructed journal in to the provided file.
 
         Args:
-            journal_file_path (str): full path to output journal file
+            journal_file_path (str, path): full path to output journal file
         """
-        if not journal_file_path.lower().endswith('.txt'):
+        if not str(journal_file_path).lower().endswith('.txt'):
             raise Exception("Journal file extension must be .txt")
         with open(journal_file_path, "w") as jrn_file:
             jrn_file.write(self._journal_contents)
